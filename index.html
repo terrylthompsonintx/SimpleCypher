@@ -18,18 +18,17 @@
         <![endif]-->
         <h1>Simple Cypher</h1>  
           
-        <h3>Enter or paste text in the Plain Text box and hit the 'Encrpyt' button.  The Encrypted Text box will display the result.   Paste encrypted text the Encrypted Text box and hit the Decrypt button to decrypt.  </h3>
+        <h3>Enter or paste text in the Text box.    </h3>
         <div class= "scdiv" name="plainText">
-            <h2>Plain Text</h2>
-            <textarea name="" id="clearTxt" cols="30" rows="10"></textarea>
-            <button class= "scbutton"id="eBtn">Encrypt</button>
-        </div>
-        <div class= "scdiv" name="encryptedText">
-            <h2>Encrypted Text</h2>
-            <textarea name="" id="encrytTxt" cols="30" rows="10"></textarea>
+            <h2>Plain / Encrypted Text</h2>
+            <textarea name="" id="txtArea" cols="30" rows="10"></textarea>
+            <br>
+            <button class= "scbutton"id="eBtn">Encrypt</button> 
             <button class= "scbutton" id="dBtn">Decrypt</button>
             <button class= "scbutton" id="cpybtn">Copy to Clipboard</button>
+            <button class= "scbutton" id="pastebtn">Paste from Clipboard</button>
         </div>
+        
         <h4> The cypher used on this page is an extremly simple one and this site is to be used for fun.  All encryption is performed on your client.  
         </h4>
         <script src="./assets/script.js" async defer></script>

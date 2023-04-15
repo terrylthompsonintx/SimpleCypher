@@ -4,8 +4,9 @@ const lookUp = ["A", "B", "C","D","E","F","G","H","I","J","K","L","M","N","O","P
 
 function encryptText () {
     //alert("eBtn");
+    //document.getElementById("txtArea").value = null;
     var encryptOut ='';
-    var plaintext = document.getElementById("clearTxt").value
+    var plaintext = document.getElementById("txtArea").value
     for(let i = 0; i < plaintext.length; i++){
       for(let x =0;x<lookUp.length; x++){
         if (plaintext[i]===lookUp[x]){
@@ -15,12 +16,13 @@ function encryptText () {
         
     }  
     
-    document.getElementById("encrytTxt").value = encryptOut;
-    document.getElementById("clearTxt").value = null;
+    document.getElementById("txtArea").value = encryptOut;
+    
 }
 function decryptText () {
+    //document.getElementById("txtArea").value = null;
     var plainOut ="";
-    var encrtext = document.getElementById("encrytTxt").value
+    var encrtext = document.getElementById("txtArea").value
     for(let i = 0; i < encrtext.length; i++){
         for(let x =0;x<lookUp.length; x++){
           if (encrtext[i]===lookUp[x]){
@@ -30,15 +32,15 @@ function decryptText () {
           
       }
   
-    document.getElementById("clearTxt").value = plainOut;
-    document.getElementById("encrytTxt").value = null;
+    document.getElementById("txtArea").value = plainOut;
+    
     
 }
 
 function copyToClip() {
     // Get the text field
     //alert('btn')
-    var copyText = document.getElementById("encrytTxt");
+    var copyText = document.getElementById("txtArea");
   
     // Select the text field
     copyText.select();
@@ -49,6 +51,11 @@ function copyToClip() {
   
     // Alert the copied text
     alert("Copied the text: " + copyText.value);
+}
+function pasteClip() {
+    navigator.clipboard
+    .readText()
+    .then((clipText) => (document.getElementById("txtArea").value = clipText))
   }
 
 
@@ -61,4 +68,5 @@ function copyToClip() {
 document.getElementById("eBtn").addEventListener("click", encryptText);
 document.getElementById("dBtn").addEventListener("click", decryptText);
 document.getElementById("cpybtn").addEventListener("click", copyToClip);
+document.getElementById("pastebtn").addEventListener("click", pasteClip);
 
