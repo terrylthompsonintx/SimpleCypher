@@ -35,8 +35,21 @@ function decryptText () {
     
 }
 
-
-console.log("script loaded")
+function copyToClip() {
+    // Get the text field
+    //alert('btn')
+    var copyText = document.getElementById("encrytTxt");
+  
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+  
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+  
+    // Alert the copied text
+    alert("Copied the text: " + copyText.value);
+  }
 
 
 
@@ -47,4 +60,5 @@ console.log("script loaded")
 
 document.getElementById("eBtn").addEventListener("click", encryptText);
 document.getElementById("dBtn").addEventListener("click", decryptText);
+document.getElementById("cpybtn").addEventListener("click", copyToClip);
 
