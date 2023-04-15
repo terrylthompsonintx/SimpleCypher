@@ -57,7 +57,7 @@ function pasteClip() {
     navigator.clipboard
     .readText()
     .then((clipText) => (document.getElementById("txtArea").value = clipText))
-  }
+}
 
 
 
