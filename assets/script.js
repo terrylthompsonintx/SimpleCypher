@@ -10,7 +10,13 @@ function encryptText () {
     for(let i = 0; i < plaintext.length; i++){
       for(let x =0;x<lookUp.length; x++){
         if (plaintext[i]===lookUp[x]){
-            encryptOut += lookUp[x+1]
+            if (lookUp[x]==='~'){
+              encryptOut += "A"
+            }
+            else {
+              encryptOut += lookUp[x+1]
+            }
+            
         }
       }
         
@@ -26,15 +32,17 @@ function decryptText () {
     for(let i = 0; i < encrtext.length; i++){
         for(let x =0;x<lookUp.length; x++){
           if (encrtext[i]===lookUp[x]){
+            if (lookUp[x]==='A'){
+              plainOut += '~'
+            }
+            else{
               plainOut += lookUp[x-1]
+            }
           }
         }
-          
-      }
+    }
   
     document.getElementById("txtArea").value = plainOut;
-    
-    
 }
 
 function copyToClip() {
