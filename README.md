@@ -12,4 +12,4 @@ The project was inspired by one of Free Code Camp's final projects in the JavaSc
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/terrylthompsonintx/SimpleCypher/blob/main/screencap.png)
