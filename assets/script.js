@@ -67,6 +67,17 @@ function pasteClip() {
     .then((clipText) => (document.getElementById("txtArea").value = clipText))
 }
 
+function textToSpeech(){
+  var speechText = document.getElementById("txtArea").value;
+  console.log(speechText)
+  var texttoSpeak = new SpeechSynthesisUtterance(speechText);
+  texttoSpeak.volume = 1;
+  texttoSpeak.rate = 1;
+  texttoSpeak.pitch = 1;
+  texttoSpeak.lang = 'en-US';
+  window.speechSynthesis.speak(texttoSpeak);
+}
+
 
 
 
@@ -78,4 +89,5 @@ document.getElementById("eBtn").addEventListener("click", encryptText);
 document.getElementById("dBtn").addEventListener("click", decryptText);
 document.getElementById("cpybtn").addEventListener("click", copyToClip);
 document.getElementById("pastebtn").addEventListener("click", pasteClip);
+document.getElementById("speakIt").addEventListener("click", textToSpeech);
 
